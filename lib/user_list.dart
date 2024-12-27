@@ -68,15 +68,26 @@ class _UserListState extends State<UserList> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            user.name ?? "No Name",
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: Text(
+                              user.name ?? "No Name",
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
+                          const SizedBox(width: 8),
                           ElevatedButton(
-                              onPressed: (){}, child: const Text("User"),
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                                vertical: 8,
+                              ),
+                            ),
+                            child: const Text("User"),
                           ),
                         ],
                       ),
@@ -84,18 +95,23 @@ class _UserListState extends State<UserList> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Phone: ${user.phoneNo ?? "N/A"}",
-                            style: const TextStyle(
-                              fontSize: 16,
+                          Expanded(
+                            child: Text(
+                              "Phone: ${user.phoneNo ?? "N/A"}",
+                              style: const TextStyle(
+                                fontSize: 16,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
+                          const SizedBox(width: 8),
                           Text(
                             "Date: ${DateTime.now().toString().substring(0, 10)}",
                             style: const TextStyle(
                               fontSize: 14,
                               color: Colors.grey,
                             ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
@@ -103,19 +119,24 @@ class _UserListState extends State<UserList> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Email: ${user.email ?? "N/A"}",
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
+                          Expanded(
+                            child: Text(
+                              "Email: ${user.email ?? "N/A"}",
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
+                          const SizedBox(width: 8),
                           Text(
                             "Reporting To: ${user.reportingTo ?? "N/A"}",
                             style: const TextStyle(
                               fontSize: 14,
                               color: Colors.grey,
                             ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
